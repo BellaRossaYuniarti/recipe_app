@@ -70,10 +70,8 @@ class _RecipeSearchPageState extends State<RecipeSearchPage> {
                     itemCount: provider.recipes.length,
                     itemBuilder: (context, index) {
                       final recipe = provider.recipes[index];
-
-                      // Batas deskripsi hingga 100 karakter
                       String truncatedDescription =
-                          recipe.description.length > 100
+                          recipe.description.length > 50
                               ? '${recipe.description.substring(0, 50)}...'
                               : recipe.description;
 
@@ -89,7 +87,7 @@ class _RecipeSearchPageState extends State<RecipeSearchPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(truncatedDescription),
-                            if (recipe.description.length > 100)
+                            if (recipe.description.length > 50)
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(
