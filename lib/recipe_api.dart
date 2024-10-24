@@ -7,7 +7,7 @@ class RecipeProvider with ChangeNotifier {
   List<Recipe> _recipes = [];
   List<Recipe> get recipes => _recipes;
 
-  final String _apiKey = '14f2fa807emsh123ca0aa4d59b0fp1ef141jsn4d8712b217a8'; 
+  final String _apiKey = '14f2fa807emsh123ca0aa4d59b0fp1ef141jsn4d8712b217a8';
   final String _apiHost = 'tasty.p.rapidapi.com';
 
   Future<void> fetchRecipes(String query) async {
