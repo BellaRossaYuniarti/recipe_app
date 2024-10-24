@@ -25,8 +25,7 @@ class RecipeProvider with ChangeNotifier {
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       final List recipesData = data['results'];
-      _recipes =
-          recipesData.map((recipeData) => Recipe.fromJson(recipeData)).toList();
+      _recipes = recipesData.map((recipeData) => Recipe.fromJson(recipeData)).toList();
       notifyListeners();
     } else {
       throw Exception('Failed to load recipes');
